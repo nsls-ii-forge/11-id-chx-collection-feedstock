@@ -8,7 +8,7 @@ package:
   version: {{ year }}C{{ cycle }}.{{ version }}
 
 build:
-  skip: True  # [py<36]
+  skip: True  # [py<36 or win]
   number: 0
 
 requirements:
