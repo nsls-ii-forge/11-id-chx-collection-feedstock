@@ -1,0 +1,35 @@
+{% set name = "11-id-chx-collection" %}
+{% set year = "2019" %}
+{% set cycle = "3" %}
+{% set version = "1" %}
+
+package:
+  name: {{ name }}
+  version: {{ year }}C{{ cycle }}.{{ version }}
+
+build:
+  skip: True  # [py<36]
+  number: 0
+
+requirements:
+  host:
+    - python
+  run:
+    - python
+    - chxtools
+    - suitcase-specfile
+
+test:
+  imports:
+    - chxtools
+    - eiger_io
+    - suitcase.specfile
+
+about:
+  home: https://nsls-ii.github.io/deployment_docs.html
+  license: BSD 3-Clause
+  license_file: LICENSE
+  summary: NSLS-II CHX collection metapackage with extra-packages
+  description: |
+    NSLS-II CHX collection metapackage with extra-packages. See the deployment
+    documentation at https://nsls-ii.github.io/deployment_docs.html
